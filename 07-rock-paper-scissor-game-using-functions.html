@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock-Paper-Scissor</title>
+</head>
+<body>
+    <p>Rock Paper Scissors</p>
+    <button onclick="
+        play('Rock');
+    ">Rock</button>
+
+    <button onclick="
+        play('Paper');
+    ">Paper</button>
+
+    <button onclick="
+        play('Scissor');
+    ">Scissor</button>
+
+    <script>
+        function play(playerMove){
+            computerMove = pickComputerMove();
+            let result = '';
+            if(playerMove === 'Rock'){
+                if (computerMove === 'Rock'){
+                    result = 'Tie.';
+                }
+                else if(computerMove === 'Paper'){
+                    result = 'You loose.';
+                }
+                else if(computerMove === 'Scissor'){
+                    result = 'You win';
+                }
+            }
+            else if(playerMove === 'Paper'){
+                if (computerMove === 'Rock'){
+                    result = 'You win.';
+                }
+                else if(computerMove === 'Paper'){
+                    result = 'Tie.';
+                }
+                else if(computerMove === 'Scissor'){
+                    result = 'You loose.';
+                }
+            }
+            else if(playerMove === 'Scissor'){
+                if (computerMove === 'Rock'){
+                    result = 'You loose.';
+                }
+                else if(computerMove === 'Paper'){
+                    result = 'You win.';
+                }
+                else if(computerMove === 'Scissor'){
+                    result = 'Tie.';
+                }
+            }
+            alert(`You choose ${playerMove}. Computer choose ${computerMove}. ${result}`);
+        }
+        
+
+        function pickComputerMove(){
+            const randomNumber = Math.random();
+            let computerMove = '';
+            if (randomNumber >=0 && randomNumber < 1/3){
+                computerMove='Rock';
+            }
+            else if(randomNumber >= 1/3 && randomNumber < 2/3){
+                computerMove='Paper';
+            }
+            else if( randomNumber >= 2/3 && randomNumber < 1){
+                computerMove='Scissor';
+            }
+            return computerMove; //because here computerMove is cannot be accessed outside the function as it is declared inside the function
+                                 // and we need to store teh returned value so we are creating a variable called computerMove in button region
+            //return 'Hello';
+            //when we use return statement it ends the function immediately
+            //example here we have console statement, this statement will not be executed at all
+            console.log("After return");
+        }
+
+        //return statements-- lets us get a value outside the function
+        //console.log(pickComputerMove());
+
+    </script>
+</body>
+</html>

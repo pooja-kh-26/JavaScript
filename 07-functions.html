@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+<body>
+    <!--Function lets us reuse the code-->
+    <script>
+        function function1(){     // declaring the function
+            console.log("hello");
+            console.log(2+2);
+        }
+
+        function1();  // calling the function
+        function1();
+
+        // functions using parameters
+        //parameter puts a value into a function
+        //parameter works same way as a variable
+        function calculateAge(parameter1){
+            console.log(`Age = ${2024-parameter1}`);
+        }
+        calculateAge(2004);
+        calculateAge(2006);
+
+        function ageAndName(dob1 , name1){
+            console.log(`${name1}'s age is ${dob1}`);
+        }
+        ageAndName(2004, "Pooja");
+        ageAndName(2006, "Chidu")
+        
+    </script>
+</body>
+</html>
